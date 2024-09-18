@@ -1,0 +1,95 @@
+Modelos 2
+Nicolas Felipe Corredor Cortes - 20221020090
+Ejercicios de reducción de expresiones
+
+-------PRIMER EJERCICIO
+Definición de las funciones
+
+Producto 0 m||m 0=0
+Producto n m=n*m
+suma n m=n+m
+Resta n m=n-m
+
+Desarrollo de Forma perezosa:
+	1. Producto(suma(3 4) resta(6 2))
+	2. Suma(3 4)*resta(6 2)
+	3. (3+4)*resta(6 2)
+	4. (3+4)*(6-2)
+	5. 7*(6-2)
+	6. 7*4
+
+	RTA:28
+
+------SEGUNDO EJERCICIO
+Definición de las funciones:
+
+Factorial n=n*Factorial(n-1)
+Factorial 0=1
+Fibo n=Fibo(n-1)+Fibo(n-2)
+Fibo 0=1
+Fibo 1=1
+
+Desarrollo de Forma perezosa:
+Factorial(Fibo(suma(1 3)))
+	1.Fibo(suma(1 3))*Factorial(Fibo(suma(1 3))-1)
+	2.(Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2))*Factorial(Fibo(suma (1 3))-1)
+	3.(Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2))*(Fibo(suma(1 3))-1)*Factorial(([Fibo(suma(1 3))]-1)-1)
+	4.(Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo(suma(1 3)-2))*(Fibo(suma(1 3))-1)*Factorial(([Fibo(suma(1 3))]-1)-1)
+	5.(Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*(Fibo(suma(1 3))-1)*Factorial(([Fibo(suma(1 3))]-1)-1)
+	6.(Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*[(Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2))-1]*Factorial(([Fibo(suma(1 3))]-1)-1)
+	7.(Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*[(Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2))-1]*(([Fibo(suma(1 3))]-1)-1)*Factorial((([Fibo(suma(1 3))]-1)-1)-1)
+	8.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)*(([Fibo(suma(1 3))]-1)-1)*Factorial((([Fibo(suma(1 3))]-1)-1)-1)
+	9.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo(suma(1 3)-2)]-1)*(([Fibo(suma(1 3))]-1)-1)*Factorial((([Fibo(suma(1 3))]-1)-1)-1)
+	10.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(suma(1 3))]-1)-1)*Factorial((([Fibo(suma(1 3))]-1)-1)-1)
+	11.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)*Factorial(([Fibo(suma(1 3))-1]-1)-1)
+	12.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)*((([Fibo(suma(1 3))]-1)-1)-1)*Factorial(((([Fibo(suma(1 3))]-1)-1)-1)-1)
+	13.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)*((([Fibo(suma(1 3))]-1)-1)-1)*Factorial(((([Fibo(suma(1 3))]-1)-1)-1)-1)
+	14.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo(suma(1 3)-2)]-1)-1)*((([Fibo(suma(1 3))]-1)-1)-1)*Factorial(((([Fibo(suma(1 3))]-1)-1)-1)-1)
+	15.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo(suma(1 3))]-1)-1)-1)*Factorial(((([Fibo(suma(1 3))]-1)-1)-1)-1)
+	16.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)-1)*Factorial(((([Fibo(suma(1 3))]-1)-1)-1)-1)
+	17.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)-1)*(((([Fibo(suma(1 3))]-1)-1)-1)-1)*Factorial((((([Fibo(suma(1 3))]-1)-1)-1)-1)-1)
+	18.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo(suma(1 3)-1)+Fibo(suma(1 3)-2)]-1)-1)-1)*(((([Fibo(suma(1 3))]-1)-1)-1)-1)*Factorial((((([Fibo(suma(1 3))]-1)-1)-1)-1)-1)
+	19.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo(suma(1 3)-2)]-1)-1)-1)*(((([Fibo(suma(1 3))]-1)-1)-1)-1)*Factorial((((([Fibo(suma(1 3))]-1)-1)-1)-1)-1)
+	20.(Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2))*([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)*(([Fibo(((suma(1 3)-1)-1)-1)+Fibo(((suma(1 3)-1)-1)-2)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)*((([Fibo((suma(1 3)-1)-1)+Fibo((suma(1 3)-1)-2)+Fibo((suma(1 3)-2)-1)+Fibo((suma(1 3)-2)-2)]-1)-1)-1)*(((([Fibo(suma(1 3))]-1)-1)-1)-1)*Factorial((((([Fibo(suma(1 3))]-1)-1)-1)-1)-1)
+
+------TERCER EJERCICIO
+Definición de las funciones:
+
+Potencia n m=n*potencia(n m-1)
+potencia n 0=1
+producto n m=n*m
+sumalista(x:xs)=x+sumalista(xs)
+sumalista[]=0
+
+Desarrollo de Forma perezosa:
+	1. Potencia(producto(3 sumalista[1...5])) 2
+	2. producto(3 sumalista[1...5])*Potencia((producto(3 sumalista[1...5])) 2-1)
+	3. (3*sumalista[1...5])*Potencia((producto(3 sumalista[1...5])) 2-1)
+	4. (3*sumalista[1...5])*producto(3 sumalista[1...5])*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	5. (3*(1+sumalista[2...5]))*producto(3 sumalista[1...5])*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	6. (3*(1+sumalista[2...5]))*(3*sumalista[1...5])*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	7. (3*(1+sumalista[2...5]))*(3*(1+sumalista[2...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	8. (3*(1+2+sumalista[3...5]))*(3*(1+sumalista[2...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	9. (3*(1+2+sumalista[3...5]))*(3*(1+2+sumalista[3...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	10. (3*(1+2+3+sumalista[4...5]))*(3*(1+2+sumalista[3...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	11. (3*(1+2+3+sumalista[4...5]))*(3*(1+2+3+sumalista[4...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	12. (3*(1+2+3+4+sumalista[5]))*(3*(1+2+3+sumalista[4...5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	13. (3*(1+2+3+4+sumalista[5]))*(3*(1+2+3+4+sumalista[5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	14. (3*(1+2+3+4+5+sumalista[]))*(3*(1+2+3+4+sumalista[5]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	15. (3*(1+2+3+4+5+sumalista[]))*(3*(1+2+3+4+5+sumalista[]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	16. (3*(1+2+3+4+5+0))*(3*(1+2+3+4+5+sumalista[]))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	17. (3*(1+2+3+4+5+0))*(3*(1+2+3+4+5+0))*Potencia((producto(3 sumalista[1...5])) 2-1-1)
+	18. (3*(1+2+3+4+5+0))*(3*(1+2+3+4+5+0))*Potencia((producto(3 sumalista[1...5])) 0)
+	19. (3*(15))*(3*(1+2+3+4+5+0))*Potencia((producto(3 sumalista[1...5])) 0)
+	20. (3*(15))*(3*(15))*Potencia((producto(3 sumalista[1...5])) 0)
+	21. (3*(15))*(3*(15))*1 
+	22. (45)*(3*(15))*1      
+	23. (45)*(45)*1  
+	24. (45)*(45)*1 
+	25. 2025*1
+	26. 2025
+	RTA: 2025    
+	
+
+	
+	
